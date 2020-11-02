@@ -20,6 +20,12 @@ Telegram::Bot::Client.run(ENV['TOKEN']) do |bot|
         chat_id: message.chat.id,
         text: "#{message.from.first_name}, #{karen.welcome}"
       )
+      bot.api.send_message(
+        chat_id: message.chat.id,
+        text: "Do you need more reminders? Tell me '/yes'"
+      )
+    when '/yes'
+      
     when '/stop'
       bot.api.send_message(
         chat_id: message.chat.id,

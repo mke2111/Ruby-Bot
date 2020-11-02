@@ -1,3 +1,7 @@
+require 'httparty'
+require 'dotenv'
+Dotenv.load
+
 def dots
   one = '.'
   i = 1
@@ -31,10 +35,10 @@ module Bot_methods
     begin
       response = JSON.parse(HTTParty.get(uri).body)
       response = case type
-                 when 'wiki-search'
-                   response['query']['search'].map { |el| { title: el['title'] } }
-                 when 'wiki-random'
-                   response['query']['pages'].map { |el| { title: el[1]['title'] } }
+                #  when 'wiki-search'
+                #    response['query']['search'].map { |el| { title: el['title'] } }
+                #  when 'wiki-random'
+                #    response['query']['pages'].map { |el| { title: el[1]['title'] } }
                  when 'google'
                    response['items'][0..2].map { |el| { title: el['title'], link: el['link'] } }
                  when 'gif'
@@ -43,7 +47,7 @@ module Bot_methods
                    response['items'][0..2].map { |el| { title: el['title'], link: el['link'] } }
                  end
       response = response.size.positive? ? response : '0 results found for your search, please try again!'
-    rescue => e # rubocop:disable Style/RescueStandardError, Lint/UselessAssignment
+    rescue => e
       response = '0 results found for your search, please try again!'
     end
     response
