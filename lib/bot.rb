@@ -3,7 +3,7 @@
 class Karen
   def initialize
     @start = Time.now.to_i
-    info 
+    @info = info
   end
 
   def welcome
@@ -13,8 +13,8 @@ class Karen
   def info
     "You finally decide to run me, I'll kill you with water"
   end
-  
-  def bye
 
+  def bye
+    'take more water to keep you safe for me!'
   end
 end
