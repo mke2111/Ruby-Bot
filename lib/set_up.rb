@@ -4,14 +4,12 @@ def dots
   three_dots = 5
   while i < three_dots
     sleep(0.5)
-    if i == 1
-      print one.to_s
-    elsif i == 2
-      print (one ).to_s
-    else
-      print (one ).to_s
-    end
+    print one.to_s if i.is_a? Integer
     sleep(0.5)
     i += 1
   end
 end
+
+
+
+
