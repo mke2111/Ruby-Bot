@@ -14,14 +14,9 @@ def dots
   end
 end
 
-
-module Bot_methods
+module BotMethods
   def uri(type = 'wiki', query = nil)
     case type
-    # when 'wiki'
-    #   return "#{ENV['WIKIPEDIA_BASE_URI']}&generator=random&grnnamespace=0&grnlimit=3" if query.nil?
-
-    #   "#{ENV['WIKIPEDIA_BASE_URI']}&list=search&utf8=1&origin=*&srlimit=3&srsearch=#{query}"
     when 'google'
       return "#{ENV['GOOGLE_API']}google" if query.nil?
 
@@ -35,10 +30,6 @@ module Bot_methods
     begin
       response = JSON.parse(HTTParty.get(uri).body)
       response = case type
-                #  when 'wiki-search'
-                #    response['query']['search'].map { |el| { title: el['title'] } }
-                #  when 'wiki-random'
-                #    response['query']['pages'].map { |el| { title: el[1]['title'] } }
                  when 'google'
                    response['items'][0..2].map { |el| { title: el['title'], link: el['link'] } }
                  when 'gif'
@@ -51,10 +42,34 @@ module Bot_methods
       response = '0 results found for your search, please try again!'
     end
     response
-  en
+  end
 
   def gifs
     results('gif', ENV['TENOR_BASE_URI'])
   end
-end
 
+  def search_google_response(bot, message, gif)
+    search = Search.new
+    query = search.get_query_from_message(message.text)
+
+    if search.check_query(query) == query.strip
+      bot.api.send_message(chat_id: message.chat.id, text: "You are searching on Google Websites for `#{query}`!")
+      sleep 1
+      bot.api.send_message(chat_id: message.chat.id, text: 'I will give you maximum 3 Google results:')
+      sleep 1
+      response = search.results('google', search.uri('google', query.strip))
+
+      if response.is_a?(String)
+        bot.api.send_message(chat_id: message.chat.id, text: response)
+      else
+        response.each do |el|
+          bot.api.send_message(chat_id: message.chat.id, text: el[:link])
+          sleep 1
+        end
+      end
+    else
+      bot.api.send_message(chat_id: message.chat.id, text: search.check_query(query))
+      bot.api.send_animation(chat_id: message.chat.id, animation: gif) if gif
+    end
+  end
+end

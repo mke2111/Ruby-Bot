@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require 'telegram/bot'
-# require_relative '../config'
 require_relative '../lib/bot'
 require_relative '../lib/set_up'
 require 'dotenv'
@@ -25,7 +24,14 @@ Telegram::Bot::Client.run(ENV['TOKEN']) do |bot|
         text: "Do you need more reminders? Tell me '/yes'"
       )
     when '/yes'
-      
+      bot.api.send_message(
+        chat_id: message.chat.id,
+        text: karen.more
+      )
+      bot.api.send_animation(
+        chat_id: message.chat.id,
+        animation: gif
+      ) if gif
     when '/stop'
       bot.api.send_message(
         chat_id: message.chat.id,
