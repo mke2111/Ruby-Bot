@@ -2,18 +2,6 @@ require 'httparty'
 require 'dotenv'
 Dotenv.load
 
-def dots
-  one = '.'
-  i = 1
-  three_dots = 5
-  while i < three_dots
-    sleep(0.5)
-    print one.to_s if i.is_a? Integer
-    sleep(0.5)
-    i += 1
-  end
-end
-
 module BotMethods
   def uri(type = 'wiki', query = nil)
     case type
@@ -44,8 +32,9 @@ module BotMethods
     response
   end
 
-  def gifs
-    results('gif', ENV['TENOR_BASE_URI'])
+  def gif
+    results('gif', ENV['TENOR_API_TOKEN'])
+    @gif = gif[rand(1..10)] if gif
   end
 
   def search_google_response(bot, message, gif)

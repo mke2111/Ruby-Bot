@@ -1,4 +1,6 @@
 require_relative './set_up'
+require 'dotenv'
+Dotenv.load
 
 class Karen
   include BotMethods
@@ -6,6 +8,30 @@ class Karen
   def initialize
     @start = Time.now.to_i
     @info = info
+  end
+
+  def water
+    while 1 == 1
+      sleep 30
+      @drink = true
+      while @drink
+        @current = Time.now.to_i
+        puts "It is #{Time.now}, DRINK WATER" if @current - @start > 30
+        @drink = false
+      end
+    end
+  end
+
+  def dots
+    one = '.'
+    i = 1
+    three_dots = 5
+    while i < three_dots
+      sleep(0.5)
+      print one.to_s if i.is_a? Integer
+      sleep(0.5)
+      i += 1
+    end
   end
 
   def welcome
@@ -17,18 +43,29 @@ class Karen
   end
 
   def bye
-    'take more water to keep you safe for me!'
+    "It is #{Time.now}, take more water to keep you safe for me!"
   end
 
   def more
-    @joke = {
+    @random_joke = {
       0 => 'The cool part about naming your kid is you don’t have to add six numbers to make sure the name is available',
       1 => 'I ate a clock yesterday, it was very time-consuming.',
       2 => 'Did you hear about the crook who stole a calendar? He got twelve months.',
       3 => 'Did you hear about the semi-colon that broke the law? He was given two consecutive sentences.',
-      4 => 'I can still remember a time when the humanity knew more than a bot.' 
+      4 => 'I can still remember a time when the humanity knew more than a bot.'
     }
 
-    @joke[rand(5)]
+    @random_joke[rand(5)]
+  end
+end
+
+class Search
+  include BotMethods
+
+  def check_query(query)
+    return "A string of 2-50 characters is required, you typed '#{query}'" unless query.strip.size.between?(2, 50)
+    return "Only alphanumerical chars accepted, you typed '#{query}'" unless query.strip.match(/^[0-9A-Z ]+$/i)
+
+    query.strip
   end
 end

@@ -28,10 +28,11 @@ Telegram::Bot::Client.run(ENV['TOKEN']) do |bot|
         chat_id: message.chat.id,
         text: karen.more
       )
-      bot.api.send_animation(
+    when 'google'
+      bot.api.send_message(
         chat_id: message.chat.id,
-        animation: gif
-      ) if gif
+
+      )
     when '/stop'
       bot.api.send_message(
         chat_id: message.chat.id,
