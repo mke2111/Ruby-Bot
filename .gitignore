@@ -1,2 +1,2 @@
-.env
+*.env
 set_up.rb
