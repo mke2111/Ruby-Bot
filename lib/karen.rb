@@ -4,21 +4,9 @@ require 'dotenv'
 Dotenv.load
 
 class Karen
+  attr_reader :random_joke
   def initialize
     @start = Time.now.to_i
-    @info = info
-  end
-
-  def water
-    while 1 != 2
-      sleep 30
-      @drink = true
-      while @drink
-        @current = Time.now.to_i
-        puts "It is #{Time.now}, DRINK WATER" if @current - @start > 30
-        @drink = false
-      end
-    end
   end
 
   def dots
@@ -35,10 +23,6 @@ class Karen
 
   def welcome
     "You should be with me more often, I make your life much healthier and better. It is #{Time.now}, take a glass of water to give you life NOW!"
-  end
-
-  def info
-    "You finally decide to run me, I'll kill you with water"
   end
 
   def bye
