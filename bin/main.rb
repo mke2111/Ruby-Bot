@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'telegram/bot'
-require_relative '../lib/bot'
+require_relative '../lib/karen'
 require_relative '../lib/set_up'
 require 'dotenv'
 Dotenv.load
@@ -30,10 +30,10 @@ Telegram::Bot::Client.run(ENV['TOKEN']) do |bot|
       )
     when '/word'
       motivations = Motivation.new
-      motivate = motivations.select_randomly
+      motivate = motivations.random_motivation
       bot.api.send_message(
         chat_id: message.chat.id,
-        text: "#{motivate['en']}",
+        text: (motivate['en']).to_s,
         date: message.date
       )
     when '/stop'
