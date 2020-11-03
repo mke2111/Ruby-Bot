@@ -4,8 +4,11 @@
 > Karen will also give you motivation quotes on demand.
 > Thoughout the project, I implemented TDD techniques of design, OOP principles through the classes and modules used.
 
-## a screenshot of Karen at my service
+## A screenshot of Karen at my service from the Telegram app
 ![image](assets/Screenshot1.png)
+
+## A screenshot of Karen at my service from the terminal
+![image](assets/Screenshot2.png)
 
 ## Available commands for the Karen
 

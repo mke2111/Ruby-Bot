@@ -1,3 +1,3 @@
-# bin/config.rb
+config.rb
 .env
-lib/set_up.rb
+set_up.rb
