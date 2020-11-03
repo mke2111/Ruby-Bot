@@ -28,10 +28,13 @@ Telegram::Bot::Client.run(ENV['TOKEN']) do |bot|
         chat_id: message.chat.id,
         text: karen.more
       )
-    when 'google'
+    when '/word'
+      motivations = Motivation.new
+      motivate = motivations.select_randomly
       bot.api.send_message(
         chat_id: message.chat.id,
-
+        text: "#{motivate['en']}",
+        date: message.date
       )
     when '/stop'
       bot.api.send_message(

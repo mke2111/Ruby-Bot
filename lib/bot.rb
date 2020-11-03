@@ -1,4 +1,6 @@
 require_relative './set_up'
+require 'net/http'
+require 'json'
 require 'dotenv'
 Dotenv.load
 
@@ -59,13 +61,24 @@ class Karen
   end
 end
 
-class Search
-  include BotMethods
+class Motivation
+  attr_reader :motivate
 
-  def check_query(query)
-    return "A string of 2-50 characters is required, you typed '#{query}'" unless query.strip.size.between?(2, 50)
-    return "Only alphanumerical chars accepted, you typed '#{query}'" unless query.strip.match(/^[0-9A-Z ]+$/i)
+  def initialize
+    @motivate = message_request
+  end
 
-    query.strip
+  def select_randomly
+    @motivate.sample
+  end
+
+  private
+
+  def message_request
+    url = 'https://programming-quotes-api.herokuapp.com/quotes/lang/en'
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    response = JSON.parse(response)
+    response
   end
 end
