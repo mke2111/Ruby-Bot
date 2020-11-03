@@ -50,7 +50,7 @@ Run `bundle` to install the gems from the `Gemfile`.<br>
 Create an account with Telegram and search for the [Botfather](https://t.me/botfather). Follow the instructions and create a bot, you will then receive an API Token that looks like this: `1347431199:AAH4hPt6PDiJB4swk23Lb4oOzwocjKpba0S4` and the link to your bot.<br>
 
 **step 5**
-In the terminal, run `touch .env` and store the API token for your bot in a variable named `TOKEN =`
+In the terminal, run `touch token.env` and store the API token for your bot in a variable named `TOKEN=`
 
 **step 6**
 Now run `cd bin`, followed by `mains.rb` and Karen will start up in the terminal.

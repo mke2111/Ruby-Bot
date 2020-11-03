@@ -17,7 +17,7 @@ class Motivation
   private
 
   def all_motivations
-    url = ENV['MOTIVATION']
+    url = 'https://programming-quotes-api.herokuapp.com/quotes/lang/en'
     uri = URI(url)
     response = Net::HTTP.get(uri)
     JSON.parse(response)
