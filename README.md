@@ -1,6 +1,6 @@
 # The Telegram Bot
 
-> In this project, I built a telegram bot as my personal assistant with only two purposes as of the November-2020. Karen, 'the telegram bot' is programmed to give hourly reminders to <b>take a glass of water</b> and <b>take short breaks while doing any activity</b>.<br>
+> In this project, I built a telegram bot as my personal assistant with only two purposes as of the November-2020. Karen, 'the telegram bot' is programmed to give hourly reminders, to <b>take a glass of water</b> and <b>take short breaks while doing any activity</b>.<br>
 > Karen will also give you motivation quotes on demand.
 > Thoughout the project, I implemented TDD techniques of design, OOP principles through the classes and modules used.
 
@@ -19,7 +19,7 @@
 1. `/start` Karen will vent immediately to you and remind you to take water.
 2. `/stop` receive a farewell message, with a 'drink water reminder'.
 3. `/yes` Karen will give a random joke to keep you all smiles.
-4. `/word` Karen gives a random motivation to keep your day going.
+4. `/word` Karen gives a random motivation quote to keep your day going.
 
 ## Built With
 * Ruby
@@ -43,18 +43,18 @@ Navigate to the folder where you want to clone the repository and run<br>
 Run `cd Ruby-Bot` to navigate into the root folder of the project<br>
 
 **Step 3**<br>
-Run `bundle` to install the gems from the `Gemfile`.<br>
-
-**Step 4**<br>
 Create an account with Telegram and search for the [Botfather](https://t.me/botfather). Follow the instructions and create a bot, you will then receive an API Token that looks like this: `1347431199:AAH4hPt6PDiJB4swk23Lb4oOzwocjKpba0S4` and the link to your bot 'https://web.telegram.org/#/im?p=replace-with-your-bot-link'.<br>
 
-**step 5**
+**step 4**<br>
 In the terminal, run `touch token.env` and store the API token for your bot in a variable named `TOKEN=`
 
-**step 6**
+**Step 5**<br>
+Run `bundle` to install the gems from the `Gemfile`.<br>
+
+**step 6**<br>
 Now run `ruby bin/mains.rb`, and Karen will start up in the terminal.
 
-**step 7**
+**step 7**<br>
 You can then communicate with Karen using the available commands stated above
 
 ## Tests
@@ -74,7 +74,7 @@ You can then communicate with Karen using the available commands stated above
 
 ## 🤝 Contributing
 
-> Our favourite contributions are those that help us improve the project:-
+> My favourite contributions are those that help me improve the project:-
 
 - Fork Contributions
 - Issue
