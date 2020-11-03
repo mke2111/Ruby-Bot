@@ -10,6 +10,10 @@
 ## A screenshot of Karen at my service from the terminal
 ![image](assets/Screenshot2.png)
 
+## Live Video
+
+[Project launch](https://www.loom.com/share/4e3c7ad09d8c4cb692ba9a59973f4640)
+
 ## Available commands for the Karen
 
 1. `/start` Karen will vent immediately to you and remind you totake water
