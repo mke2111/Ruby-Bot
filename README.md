@@ -14,16 +14,16 @@
 
 [Project launch](https://www.loom.com/share/4e3c7ad09d8c4cb692ba9a59973f4640)
 
-## Available commands for the Karen
+## Available commands for Karen
 
-1. `/start` Karen will vent immediately to you and remind you totake water
-2. `/stop` receive a farewell message, with a 'drink water reminder'
-3. `/yes` Karen will give a random joke to keep you all smiles
-4. `/word` Karen gives a random motivation to keep your day going
+1. `/start` Karen will vent immediately to you and remind you to take water.
+2. `/stop` receive a farewell message, with a 'drink water reminder'.
+3. `/yes` Karen will give a random joke to keep you all smiles.
+4. `/word` Karen gives a random motivation to keep your day going.
 
 ## Built With
 * Ruby
-* [Motivation Quotes](https://programming-quotes-api.herokuapp.com/quotes/lang/en)
+* [Herokuapp Motivation Quotes](https://programming-quotes-api.herokuapp.com/quotes/lang/en)
 * RSpec
 * Rubocop
 
@@ -37,8 +37,7 @@ To get this project up and running locally, you must have ruby installed on your
 
 **Step 1**<br>
 Navigate to the folder where you want to clone the repository and run<br>
-`git clone https://github.com/mke2111/Ruby-Bot/tree/bot`. 
-It will clone the repo to your local folder.<br>
+`git clone https://github.com/mke2111/Ruby-Bot/tree/bot`.
 
 **Step 2**<br>
 Run `cd Ruby-Bot` to navigate into the root folder of the project<br>
@@ -47,7 +46,7 @@ Run `cd Ruby-Bot` to navigate into the root folder of the project<br>
 Run `bundle` to install the gems from the `Gemfile`.<br>
 
 **Step 4**<br>
-Create an account with Telegram and search for the [Botfather](https://t.me/botfather). Follow the instructions and create a bot, you will then receive an API Token that looks like this: `1347431199:AAH4hPt6PDiJB4swk23Lb4oOzwocjKpba0S4` and the link to your bot.<br>
+Create an account with Telegram and search for the [Botfather](https://t.me/botfather). Follow the instructions and create a bot, you will then receive an API Token that looks like this: `1347431199:AAH4hPt6PDiJB4swk23Lb4oOzwocjKpba0S4` and the link to your bot 'https://web.telegram.org/#/im?p=replace-with-your-bot-link'.<br>
 
 **step 5**
 In the terminal, run `touch token.env` and store the API token for your bot in a variable named `TOKEN=`
@@ -56,13 +55,12 @@ In the terminal, run `touch token.env` and store the API token for your bot in a
 Now run `ruby bin/mains.rb`, and Karen will start up in the terminal.
 
 **step 7**
-Now communicate with Karen using the available commands stated above
+You can then communicate with Karen using the available commands stated above
 
 ## Tests
 
 1. Open Terminal
-2. Install RSpec on your system by running: `gem install rspec`
-3. Run the tests with the command while in the root folder: `rspec`
+2. Run the tests with the command while in the root folder: `rspec`
 
 ## Author
 
@@ -70,11 +68,19 @@ Now communicate with Karen using the available commands stated above
 - Twitter: [@Roymkenya](https://twitter.com/Roymkenya)
 - LinkedIn: [Roy Mukuye](https://www.linkedin.com/in/roy-mukuye-42b07b1b4)
 
+## Acknowledgement
+
+- Thanks to all the contributors of [atipugin/telegram-bot-ruby](https://github.com/atipugin/telegram-bot-ruby) for the design inspirations and project guidance.
+
 ## 🤝 Contributing
 
-Our favourite contributions are those that help us improve the project, whether with a contribution, an issue, or a feature request!
+> Our favourite contributions are those that help us improve the project:-
 
-Feel free to check the [issues page](https://github.com/mke2111/Ruby-Bot/issuess) to either create an issue.
+- Fork Contributions
+- Issue
+- Feature requests
+
+Feel free to check the [issues page](https://github.com/mke2111/Ruby-Bot/issues) to create an issue.
 
 ## Show your support
 
