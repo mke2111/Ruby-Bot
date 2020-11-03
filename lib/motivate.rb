@@ -1,7 +1,7 @@
 require 'net/http'
 require 'json'
 require 'dotenv'
-Dotenv.load
+Dotenv.load('token.env')
 
 class Motivation
   attr_reader :motivate

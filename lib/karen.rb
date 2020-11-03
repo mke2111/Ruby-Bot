@@ -1,10 +1,11 @@
 require 'net/http'
 require 'json'
 require 'dotenv'
-Dotenv.load
+Dotenv.load('token.env')
 
 class Karen
   attr_reader :random_joke
+
   def initialize
     @start = Time.now.to_i
   end

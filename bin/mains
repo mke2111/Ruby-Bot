@@ -4,7 +4,7 @@ require 'telegram/bot'
 require_relative '../lib/karen'
 require_relative '../lib/motivate'
 require 'dotenv'
-Dotenv.load
+Dotenv.load('token.env')
 
 karen = Karen.new
 
