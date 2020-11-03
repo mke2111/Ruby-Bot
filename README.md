@@ -2,7 +2,7 @@
 
 > In this project, I built a telegram bot as my personal assistant with only two purposes as of the November-2020. Karen, 'the telegram bot' is programmed to give hourly reminders, to <b>take a glass of water</b> and <b>take short breaks while doing any activity</b>.<br>
 > Karen will also give you motivation quotes on demand.
-> Thoughout the project, I implemented TDD techniques of design, OOP principles through the classes and modules used.
+> Throughout the project, I implemented TDD techniques of design, OOP principles through the classes and modules used.
 
 ## A screenshot of Karen at my service from the Telegram app
 ![image](assets/Screenshot1.png)

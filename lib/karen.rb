@@ -4,7 +4,7 @@ require 'dotenv'
 Dotenv.load('token.env')
 
 class Karen
-  attr_reader :random_joke
+  attr_accessor :random_joke
 
   def initialize
     @start = Time.now.to_i
@@ -23,7 +23,8 @@ class Karen
   end
 
   def welcome
-    "You should be with me more often, I make your life much healthier and better. It is #{Time.now}, take a glass of water to give you life NOW!"
+    str = 'You should be with me more often, I make your life much healthier and better.'
+    str << "It is #{Time.now}, take a glass of water to give you life NOW!"
   end
 
   def bye
@@ -32,13 +33,13 @@ class Karen
 
   def more
     @random_joke = {
-      0 => 'The cool part about naming your kid is you don’t have to add six numbers to make sure the name is available',
+      0 => 'The cool part about naming kids is you don’t have to add six numbers to make sure the name is available',
       1 => 'I ate a clock yesterday, it was very time-consuming.',
       2 => 'Did you hear about the crook who stole a calendar? He got twelve months.',
       3 => 'Did you hear about the semi-colon that broke the law? He was given two consecutive sentences.',
       4 => 'I can still remember a time when the humanity knew more than a bot.'
     }
-
+    
     @random_joke[rand(5)]
   end
 end
