@@ -53,7 +53,7 @@ Create an account with Telegram and search for the [Botfather](https://t.me/botf
 In the terminal, run `touch token.env` and store the API token for your bot in a variable named `TOKEN=`
 
 **step 6**
-Now run `cd bin`, followed by `mains.rb` and Karen will start up in the terminal.
+Now run `ruby bin/mains.rb`, and Karen will start up in the terminal.
 
 **step 7**
 Now communicate with Karen using the available commands stated above
