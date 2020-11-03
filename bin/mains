@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
-
 require 'telegram/bot'
 require_relative '../lib/karen'
 require_relative '../lib/motivate'
