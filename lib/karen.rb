@@ -1,19 +1,16 @@
-require_relative './set_up'
 require 'net/http'
 require 'json'
 require 'dotenv'
 Dotenv.load
 
 class Karen
-  include BotMethods
-
   def initialize
     @start = Time.now.to_i
     @info = info
   end
 
   def water
-    while 1 == 1
+    while 1 != 2
       sleep 30
       @drink = true
       while @drink
@@ -60,5 +57,3 @@ class Karen
     @random_joke[rand(5)]
   end
 end
-
-
