@@ -1,9 +1,8 @@
 require_relative '../lib/karen'
 
 describe Karen do
+  let(:jokes) { Karen.new }
   context '#more' do
-    let(:jokes) { Karen.new }
-    let(:num) { rand(5) } 
     it 'Is a random string' do
       expect(jokes.more.class).to eql(String)
     end
@@ -12,8 +11,8 @@ describe Karen do
       expect(@random_joke).to be_nil
     end
 
-    it 'random number given' do
-      expect(@random_joke[num]).to be_nil
+    it 'quote not given' do
+      expect(jokes.more).not_to include('I dont exist in the random_jokes.')
     end
   end
 end

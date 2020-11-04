@@ -4,10 +4,11 @@ require 'dotenv'
 Dotenv.load('token.env')
 
 class Karen
-  attr_accessor :random_joke
+  attr_reader :random_joke
 
   def initialize
     @start = Time.now.to_i
+    @random_joke = random_joke
   end
 
   def dots
@@ -39,7 +40,6 @@ class Karen
       3 => 'Did you hear about the semi-colon that broke the law? He was given two consecutive sentences.',
       4 => 'I can still remember a time when the humanity knew more than a bot.'
     }
-    
     @random_joke[rand(5)]
   end
 end
