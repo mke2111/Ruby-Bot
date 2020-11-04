@@ -37,7 +37,7 @@ To get this project up and running locally, you must have ruby installed on your
 
 **Step 1**<br>
 Navigate to the folder where you want to clone the repository and run<br>
-`git clone https://github.com/mke2111/Ruby-Bot/tree/bot`.
+`git clone https://github.com/mke2111/Ruby-Bot.git`.
 
 **Step 2**<br>
 Run `cd Ruby-Bot` to navigate into the root folder of the project<br>
